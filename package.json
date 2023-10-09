@@ -1,0 +1,19 @@
+{
+  "name": "webpack-vue3",
+  "version": "1.0.0",
+  "description": "webpack5+vue3+ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "prettier": "3.0.3",
+    "vue": "^3.3.4",
+    "vue-loader": "^17.3.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
