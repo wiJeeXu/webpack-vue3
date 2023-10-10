@@ -6,3 +6,4 @@
 4. typescript tsconfig.json
 5. src/main.ts
 6. vue3 全家桶
+7. webpack.config.js 改成用 webpack.config.ts 类似于vite.config.ts

@@ -1,9 +1,10 @@
-const path = require('path')
-const { VueLoaderPlugin } = require('vue-loader')
+import path from 'path'
+import { VueLoaderPlugin } from 'vue-loader'
+import CopyPlugin from 'copy-webpack-plugin'
+import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 
-const CopyPlugin = require('copy-webpack-plugin')
-module.exports = {
-  mode: 'production',
+export default {
+  mode: 'development',
   entry: path.resolve(__dirname, 'src/main.ts'),
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -17,7 +18,8 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new CopyPlugin({
-      patterns: [{ from: 'public', to: '' }],
+      patterns: [{ from: 'public' }],
     }),
+    new CleanWebpackPlugin(),
   ],
 }
