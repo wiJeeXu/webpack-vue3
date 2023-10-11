@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "webpack5+vue3+ts",
   "scripts": {
+    "dev": "webpack serve --open",
     "build": "ts-node node_modules/webpack/bin/webpack.js --config webpack.config.ts"
   },
   "keywords": [],
@@ -22,6 +23,7 @@
     "vue": "^3.3.4",
     "vue-loader": "^17.3.0",
     "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   }
 }
