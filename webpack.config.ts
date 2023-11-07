@@ -3,6 +3,8 @@ import { VueLoaderPlugin } from 'vue-loader'
 import CopyPlugin from 'copy-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+
 const isProduction = process.env.NODE_ENV === 'production'
 
 function resolve(target: string) {
@@ -22,12 +24,16 @@ export default {
         use: 'vue-loader',
       },
       {
-        test: /\.tsx?$/,
+        test: /\.(ts|tsx)?$/,
         loader: 'ts-loader',
         options: {
           appendTsSuffixTo: [/\.vue$/],
         },
         exclude: /node_modules/,
+      },
+      {
+        test: /.scss$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
     ],
   },
@@ -45,6 +51,7 @@ export default {
     port: 9000,
   },
   plugins: [
+    new MiniCssExtractPlugin(),
     new VueLoaderPlugin(),
     new CopyPlugin({
       patterns: [
